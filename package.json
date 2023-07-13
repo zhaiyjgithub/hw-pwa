@@ -10,6 +10,7 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.7",
+    "@types/w3c-web-usb": "^1.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -29,6 +30,7 @@
     "workbox-streams": "^6.6.0"
   },
   "scripts": {
+    "sync": "aws s3 sync build/ s3://hw-pwa",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -51,5 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
