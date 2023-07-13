@@ -22,9 +22,7 @@ function App() {
   const requestDevice = async () => {
     let device
     try {
-      device = await navigator.usb.requestDevice({ filters: [{
-          vendorId: 0x2341,
-        }]})
+      device = await navigator.usb.requestDevice()
     } catch (e) {
       console.error(e)
     }

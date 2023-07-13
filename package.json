@@ -31,7 +31,6 @@
     "workbox-streams": "^6.6.0"
   },
   "scripts": {
-    "sync": "aws s3 sync build/ s3://hw-pwa",
     "page": "react-scripts build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
