@@ -1,6 +1,13 @@
 import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Cam from "./cam/cam";
+import {Container, Navbar} from "react-bootstrap";
+import {initDB} from "react-indexed-db-hook";
+import {DBConfig} from "./database/dao";
+
+initDB(DBConfig)
 
 const connectedDevices: USBDevice[] = [];
 
@@ -81,11 +88,21 @@ function App() {
 
   return (
     <div className="App">
-      <button style={{height: 50, backgroundColor: 'blue', fontSize: 24, color: 'white'}} onClick={async () => {
-          await requestDevice()
-      }}>
-        Click
-      </button>
+      <Navbar className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="/img/logo.svg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            React Bootstrap
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <Cam />
     </div>
   );
 }
