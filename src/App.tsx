@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import logo from './logo.svg';
+import logo from './asserts/igi-logo.jpg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Cam from "./cam/cam";
-import {Container, Navbar} from "react-bootstrap";
+import WebcamController from "./cam/webcamController";
+import {Col, Container, Navbar, Row} from "react-bootstrap";
 import {initDB} from "react-indexed-db-hook";
 import {DBConfig} from "./database/dao";
 
@@ -88,21 +88,28 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar className="bg-body-tertiary">
+      <Navbar className="bg-primary">
         <Container>
           <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src="/img/logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            React Bootstrap
+           <Container>
+              <Row className={'align-items-center'}>
+                <Col>
+                  <img
+                    alt=""
+                    src={logo}
+                    width="40"
+                    height="40"
+                  />
+                </Col>
+                <Col>
+                  <span className={'h2 text-white'}>iGI - MDLand</span>
+                </Col>
+              </Row>
+           </Container>
           </Navbar.Brand>
         </Container>
       </Navbar>
-      <Cam />
+      <WebcamController />
     </div>
   );
 }
