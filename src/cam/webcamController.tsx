@@ -145,11 +145,11 @@ export default function WebcamController() {
 
   return (
     <Container className={'mt-4'}>
-     <Row>
-       <Col>
+     <Row className={'gy-xs-0 gy-lg-4'}>
+       <Col xs={12} lg={6}>
          {renderCam()}
        </Col>
-       <Col>
+       <Col xs={12} lg={6}>
          {renderTabs()}
        </Col>
      </Row>
