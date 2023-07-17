@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/hw-pwa/static/css/main.30ea52ad.css",
-    "main.js": "/hw-pwa/static/js/main.e931d4da.js",
+    "main.js": "/hw-pwa/static/js/main.2aa6b41e.js",
     "static/js/787.fde91036.chunk.js": "/hw-pwa/static/js/787.fde91036.chunk.js",
     "static/media/igi-logo.jpg": "/hw-pwa/static/media/igi-logo.bc798776937c58ab8996.jpg",
     "service-worker.js": "/hw-pwa/service-worker.js",
     "index.html": "/hw-pwa/index.html",
     "main.30ea52ad.css.map": "/hw-pwa/static/css/main.30ea52ad.css.map",
-    "main.e931d4da.js.map": "/hw-pwa/static/js/main.e931d4da.js.map",
+    "main.2aa6b41e.js.map": "/hw-pwa/static/js/main.2aa6b41e.js.map",
     "787.fde91036.chunk.js.map": "/hw-pwa/static/js/787.fde91036.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30ea52ad.css",
-    "static/js/main.e931d4da.js"
+    "static/js/main.2aa6b41e.js"
   ]
 }
