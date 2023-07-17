@@ -53,3 +53,12 @@ export const blobToBase64 = (blob: Blob) => {
     };
   });
 };
+
+export const base64ToBlob = async (base64Data: string) => {
+  const base64Response = await fetch(base64Data);
+  return base64Response.blob()
+}
+
+export const getUUID = () => {
+  return Math.random().toString(36).slice(-6)
+}

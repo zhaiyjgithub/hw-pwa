@@ -1,5 +1,6 @@
 import React from "react";
 import {ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Row} from "react-bootstrap";
+import {base64ToBlob} from "../database/dao";
 
 export enum MediaType {
   image,
@@ -41,6 +42,22 @@ export default function Gallery(props: IProps) {
       >
         <Dropdown.Item eventKey="1">Upload</Dropdown.Item>
         <Dropdown.Item eventKey="2">Rename</Dropdown.Item>
+        <Dropdown.Item eventKey="2" onClick={async () => {
+          const item = data[idx]
+          const dataBlob = await base64ToBlob(item.data)
+          const blob = new Blob([dataBlob as BlobPart], {
+            type: mediaType === MediaType.image ? "image/jpeg" : "video/webm"
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          document.body.appendChild(a);
+          a.setAttribute("style", "display: none")
+          a.href = url;
+          a.download = mediaType === MediaType.image ? `${item.name}.jpeg` : `${item.name}.webm`;
+          a.click();
+          window.URL.revokeObjectURL(url);
+
+        }}>Export</Dropdown.Item>
         <Dropdown.Item onClick={() => {
           if (onDelete) {
             onDelete(idx)
@@ -56,8 +73,8 @@ export default function Gallery(props: IProps) {
           return <Col className={'gy-2'} xs={3}>
             <Card style={{width: '8rem'}}>
               {mediaType === MediaType.image ? <Card.Img variant="top" src={item.data} /> :
-                <div style={{width: '8rem', height: '8rem'}} className={'d.grid align-items-center justify-content-center'}>
-                  <i className="bi bi-camera-reels"></i>
+                <div style={{width: '8rem', height: '6rem', backgroundColor: 'gray', display: "flex", flexDirection: "column", justifyContent: 'center'}}>
+                  <span style={{fontSize: 24, fontWeight: '600'}}>Video</span>
                 </div>}
               <Card.Body>
                 <p className={'text-truncate lh-base'}>{`${item.name}`}</p>
