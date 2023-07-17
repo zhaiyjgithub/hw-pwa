@@ -26,6 +26,7 @@ function App() {
     devices.forEach(handleConnectedDevice);
   }
 
+
   const requestDevice = async () => {
     let device
     try {
